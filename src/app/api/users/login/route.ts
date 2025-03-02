@@ -14,7 +14,7 @@ export async function POST(request: NextRequest){
         //check if user exist
 
         const user=await User.findOne({email});
-
+    
         if(!user){
             return NextResponse.json({error:"User does not exist"},{status:400})
         }
@@ -31,7 +31,7 @@ export async function POST(request: NextRequest){
         }
         //create token
         const token=await jwt.sign(tokenData,process.env.TOKEN_SECRET!,{expiresIn:"1d"})
-        const response=NextRequest.json({
+        const response=NextResponse.json({
             message:"login successful",
             success:true,
 
