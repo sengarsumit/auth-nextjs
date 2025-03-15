@@ -27,15 +27,17 @@ export default function ProfilePage() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2 ">  
-        <h1>Profile</h1>
+        <div className="flex flex-col items-center justify-center min-h-screen py-6  ">  
+       <h1 className="text-9xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-yellow-400 to-[#001E80] text-transparent bg-clip-text  mb-10">
+            Profile Details
+            </h1>
         <hr/>
-        <p>profile page</p>
-        <h2 className="padding round bg-green-500 p-1">{data === 'nothing' ? "Nothing" : <Link href={`/profile/${data}`}>{data} </Link>}</h2>
+        <h2 className=" border-white   p-1">User Id : {data === 'nothing' ? "Nothing" : <Link href={`/profile/${data}`}>{data} </Link>}</h2>
         <hr/>
-        <button onClick={logout} className="bg-blue-500 mt-4 hover:bg-slate-500 text-white font-bold py-2 px-4">Logout</button>
+        
 
-        <button onClick={getUserDetails} className="bg-purple-500 mt-4 hover:bg-purple-600 text-white font-bold py-2 px-4">GetUser Details</button>
+        <button onClick={getUserDetails} className="bg-gradient-to-b from-purple-500 to-[#001E80] mt-4 hover:bg-purple-600 text-white font-bold py-2 px-4">GetUser ID</button>
+        <button onClick={logout} className="bg-gradient-to-b from-white to-[#001E80] mt-4 hover:bg-slate-500 text-white font-bold py-2 px-4">Logout</button>
 
         </div>
     );
